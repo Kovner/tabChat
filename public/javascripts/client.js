@@ -10,14 +10,14 @@ $(function() {
 	// an input box for their name
 	$("#messages").hide();
 	$("#input").hide();
-	$("#name").hide();
+	$("#nameBox").hide();
 
 
 	var socket = io.connect();
 
 	socket.on('connect', function() {
 		$("#connecting").hide();
-		var $nameBox = $("#name");
+		var $nameBox = $("#nameBox");
 		$nameBox.show();
 		$nameBox.focus();
 		$nameBox.keypress(function(key) {
