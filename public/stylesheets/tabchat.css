@@ -1,0 +1,34 @@
+.page-header {
+	/*background-color: #f5f5f5;*/
+}
+#name {
+	height: 100px;
+	font-size: 34px;
+}
+.message {
+	margin-bottom: 1px;
+	height: 55px;
+	overflow-x: auto;
+	padding: 6px;
+}
+#messages {
+	height: 616px;
+}
+.blank {
+	height: 55px;
+	margin-bottom: 1px;
+
+}
+#input {
+	margin-top: 10px;
+}
+#vizDiv {
+	overflow: visible;
+}
+
+.btn-link {
+	vertical-align: top;
+	padding: 0px;
+	text-align: left;
+	border: 0px;
+}

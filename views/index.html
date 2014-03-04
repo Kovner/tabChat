@@ -1,0 +1,50 @@
+<!doctype html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html lang="en">
+<head>
+	<title>SocketIO + Tableau = TabChat</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tabchat.css">
+	<script type="text/javascript" src='/javascripts/jquery-2.1.0.min.js'></script>
+	<script type="text/javascript" src='/socket.io/socket.io.js'></script>
+	<script src="http://public.tableausoftware.com/javascripts/api/tableau_v8.debug.js"></script>
+	<script type="text/javascript" src='/javascripts/bootstrap.min.js'></script>
+	<script type="text/javascript" src='/javascripts/client.js'></script>
+</head>
+<body>
+	<div class="text-center page-header">
+		<h1>TabChat <small>Socket.IO + JavaScript API</small></h1>
+		<button class='btn btn-link' data-toggle="modal" data-target="#helpModal">How to use this</button>
+	</div>
+	<h1 id="connecting" class="text-center">Connecting to the chat...</h1>
+	<div class="row col-md-5 col-md-offset-3">
+		<input type="text" maxlength="15" class="form-control" id="name" placeholder="What's Your Name?">
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-2" id="messages"></div>
+		<div class="col-md-5" id="vizDiv"></div>
+	</div>
+	<div class="row col-md-4 col-md-offset-4">
+		<input type="text" maxlength = "100" class="form-control" id="input" placeholder="Your message">
+	</div>
+	<div class = "modal fade" id="helpModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class = "modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4>How to use TabChat</h4>
+				</div>
+				<div class = "modal-body">
+					<p>After logging in try selecting marks or changing the Genre Quick Filter (remember to hit apply). The chat column will show a summary of your interaction and who performed that interaction.</p>
+					<p>After the chat column has messages about interactions, try clicking the blue link in one of the messages. The viz will select those same marks or filter to those same genres.</p>
+					<p>Try having a friend log in and interact with the viz at the same time. If you don't have any friends, open up a second browser window and point it to this same URL. You will be able to 'chat' with Tableau!</p>
+				</div>
+				<div class = "modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
