@@ -1,4 +1,3 @@
-//Comment
 var express = require("express");
 var app = express();
 
@@ -11,7 +10,7 @@ app.get("/", function(req,res) {
 });
 
 var port = Number(process.env.PORT || 8888);
-var io = require('socket.io').listen(app.listen(8888));
+var io = require('socket.io').listen(app.listen(port));
 console.log("Listening on port " + port);
 
 io.sockets.on('connection', function(socket) {
