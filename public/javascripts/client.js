@@ -29,7 +29,7 @@ $(function() {
 				$("#messages").show();
 				$("#input").show();
 				//Put 10 empty message divs inside the message div
-				for(var i = 0; i < 11; i++) {
+				for(var i = 0; i < 10; i++) {
 					messageArray[i] = $('<div class="blank"></div>');
 					$("#messages").append(messageArray[i]);
 				}
@@ -40,7 +40,7 @@ $(function() {
 					hideTabs: true,
 					hideToolbar: true,
 					width: "600px",
-					height: "616px",
+					height: "560px",
 					onFirstInteractive: function() {
 					}
 				};
@@ -125,14 +125,14 @@ $(function() {
 
 	function addMessage(message) {
 		//Move all of the message htmls up one then put the new message in the last
-		for(var i = 0; i < 10; i++) {
+		for(var i = 0; i < 9; i++) {
 			messageArray[i].html(messageArray[i+1].html());
 			if(messageArray[i].html().length > 1) {
 				messageArray[i].removeClass("blank").addClass("well well-sm message");
 			}
 		}
-		messageArray[10].html(message);
-		messageArray[10].removeClass("blank").addClass("well well-sm message");
+		messageArray[9].html(message);
+		messageArray[9].removeClass("blank").addClass("well well-sm message");
 	}
 
 });

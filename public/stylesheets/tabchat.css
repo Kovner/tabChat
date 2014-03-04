@@ -1,3 +1,13 @@
+body {
+	width: 1000px !important;
+	max-width: none !important;
+}
+/*
+.row {
+	width: 1050px !important;
+}*/
+
+
 .page-header {
 	/*background-color: #f5f5f5;*/
 }
@@ -7,12 +17,15 @@
 }
 .message {
 	margin-bottom: 1px;
+	margin-left: 15px;
 	height: 55px;
 	overflow-x: auto;
 	padding: 6px;
 }
 #messages {
-	height: 616px;
+	height: 560px;
+	/*width: 400px;*/
+	/*margin-left: 10px;*/
 }
 .blank {
 	height: 55px;
