@@ -9,8 +9,9 @@ app.get("/", function(req,res) {
 	res.render("index.html");
 });
 
+var port = Number(process.env.PORT || 8888);
 var io = require('socket.io').listen(app.listen(8888));
-console.log("Listening on port 8888.");
+console.log("Listening on port " + port);
 
 io.sockets.on('connection', function(socket) {
 	// socket.emit('serverMessage', 'Welcome to the chat');
