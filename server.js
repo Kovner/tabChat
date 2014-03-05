@@ -28,15 +28,15 @@ io.sockets.on('connection', function(socket) {
 		}
 	});
 	socket.on('disconnect', function() {
-		socket.broadcast.emit('serverMessage', socket.name + " left TabChat.");
+		socket.broadcast.emit('serverMessage', (socket.name || "Someone") + " left TabChat.");
 	});
 	socket.on('clientMessage', function(data) {
-		io.sockets.emit('serverMessage', socket.name + ": " + data);
+		io.sockets.emit('serverMessage', (socket.name || "Someone") + ": " + data);
 	});
 	socket.on('clientMarks', function(data) {
-		io.sockets.emit('serverMarks', {user: socket.name, marks: data.marks, sheet: data.sheet});
+		io.sockets.emit('serverMarks', {user: (socket.name || "Someone"), marks: data.marks, sheet: data.sheet});
 	});
 	socket.on('clientFilter', function(data) {
-		io.sockets.emit('serverFilter', {user: socket.name, genres: data.genres});
+		io.sockets.emit('serverFilter', {user: (socket.name || "Someone"), genres: data.genres});
 	});
 });
