@@ -17,8 +17,18 @@ io.sockets.on('connection', function(socket) {
 	// socket.emit('serverMessage', 'Welcome to the chat');
 	socket.on('name', function(name) {
 		socket.name = name;
+		var numSockets = io.sockets.clients().length - 1;
 		socket.broadcast.emit('serverMessage', name + " joined TabChat.");
-		socket.emit('serverMessage', "Hello " + name + ". Welcome to TabChat");
+		if(numSockets === 0) {
+			socket.emit('serverMessage', "Hello " + name + ". Welcome to TabChat. You're the only one here. Try opening another browser tab.");
+		} else if(numSockets === 1) {
+			socket.emit('serverMessage', "Hello " + name + ". Welcome to TabChat. There is " + numSockets + " other person TabChatting.");
+		} else {
+			socket.emit('serverMessage', "Hello " + name + ". Welcome to TabChat. There are " + numSockets + " other people TabChatting.");
+		}
+	});
+	socket.on('disconnect', function() {
+		socket.broadcast.emit('serverMessage', socket.name + " left TabChat.");
 	});
 	socket.on('clientMessage', function(data) {
 		io.sockets.emit('serverMessage', socket.name + ": " + data);
