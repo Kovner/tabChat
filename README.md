@@ -28,6 +28,7 @@ When a user selects marks, it sends a message to the server and passes the array
 
 ## Notes
 
+* The most relevant files are server.js which is the Server side code and /public/javascripts/client.js. Yep, you guess it. That's the client side code.
 * selectMarksAsync() doesn't actually work as shown above. SocketIO converts the tableauSoftware.Mark objects into plain JSON. See the code for the hack to convert them back.
 * There's a lot more going on with TabChat than the above example. For instance, instead of the clients instantly selecting the marks that are sent to them, instead we get a message that another client selected marks. That message has a link that causes the marks to be selected. To see the actual implementation details, see the code.
 
