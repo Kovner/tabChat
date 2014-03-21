@@ -35,7 +35,7 @@ $(function() {
 				}
 				//Load the Tableau viz
 				var sheetDiv = document.getElementById("vizDiv");
-				var sheetURL = "http://public.tableausoftware.com/views/CerebralSales/Dashboard1";
+				var sheetURL = "http://public.tableausoftware.com/views/CerebralSales/Dashboard1?:showVizHome=no";
 				var sheetOptions = {
 					hideTabs: true,
 					hideToolbar: true,
