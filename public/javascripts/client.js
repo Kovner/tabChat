@@ -88,8 +88,8 @@ $(function() {
 		for(i = 0; i < marksArray[marksCounter].marks.length; i++) {
 			var oldMark = marksArray[marksCounter].marks[i];
 			var newMark = new tableauSoftware.Mark();
-			newMark._impl._collection = oldMark._impl._collection;
-			newMark._impl._tupleId = oldMark._impl._tupleId;
+			newMark.$impl.$collection = oldMark.$impl.$collection;
+			newMark.$impl.$tupleId = oldMark.$impl.$tupleId;
 			marksArray[marksCounter].marks[i] = newMark;
 		}
 		var message = data.user + " selected " +
